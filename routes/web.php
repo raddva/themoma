@@ -13,14 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.dashboard');
-});
-
-Route::get('/login', function () {
-    return view('pages.login');
-});
-
-Route::get('/sidebar', function () {
-    return view('layout.sidebar');
-});
+Route::view('/', 'pages.dashboard')->name('home');
+Route::view('/login', 'pages.login')->name('login');
+Route::view('/expenses', 'pages.expenses')->name('expenses');
+Route::view('/incomes', 'pages.incomes')->name('incomes');
+Route::view('/reports', 'pages.reports')->name('reports');
+Route::view('/categories', 'pages.categories')->name('categories');

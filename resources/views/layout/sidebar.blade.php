@@ -1,4 +1,4 @@
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+@vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/toggle_mode.js'])
 <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-black dark:border-gray-700">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
@@ -14,7 +14,7 @@
                         </path>
                     </svg>
                 </button>
-                <a href="https://flowbite.com" class="flex ms-2 md:me-24">
+                <a href="{{ route('home') }}" class="flex ms-2 md:me-24">
                     <svg class="w-6 h-6 me-2 text-gray-800 dark:text-white" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                         <path
@@ -87,7 +87,7 @@
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-black">
         <ul class="space-y-2 font-medium">
             <li>
-                <a href="#"
+                <a href="{{ route('home') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
@@ -100,7 +100,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('incomes') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
@@ -111,7 +111,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('expenses') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
@@ -123,7 +123,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('reports') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         aria-hidden="true" xmlns="http://www.w3.org/2000/svg"fill="none" viewBox="0 0 17 18">
@@ -134,7 +134,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('categories') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -146,7 +146,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('login') }}"
                     class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                         aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
@@ -165,42 +165,3 @@
         @yield('sidebar')
     </div>
 </div>
-
-<script>
-    var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia(
-            '(prefers-color-scheme: dark)').matches)) {
-        themeToggleLightIcon.classList.remove('hidden');
-    } else {
-        themeToggleDarkIcon.classList.remove('hidden');
-    }
-
-    var themeToggleBtn = document.getElementById('theme-toggle');
-
-    themeToggleBtn.addEventListener('click', function() {
-
-        themeToggleDarkIcon.classList.toggle('hidden');
-        themeToggleLightIcon.classList.toggle('hidden');
-
-        if (localStorage.getItem('color-theme')) {
-            if (localStorage.getItem('color-theme') === 'light') {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            }
-
-        } else {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-        }
-    });
-</script>

@@ -9,7 +9,7 @@
                 class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                 <span
                     class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                    Add Expense
+                    Add Category
                 </span>
             </button>
         </div>
@@ -22,9 +22,9 @@
                         d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
             </div>
-            <input type="text" id="table-search-expenses"
+            <input type="text" id="table-search-categories"
                 class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search for expenses">
+                placeholder="Search for categories">
         </div>
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -32,13 +32,10 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        Category
+                        No
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Amount
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Details
+                        Category Name
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Actions
@@ -48,21 +45,15 @@
             <tbody>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="px-6 py-4">
+                        1
+                    </td>
+                    <td class="px-6 py-4">
                         Daily Needs
                     </td>
-                    <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="h-2.5 w-2.5 rounded-full bg-red-500 me-2"></div> Rp.30,000
-                        </div>
-                    </td>
-                    <td class="px-6 py-4">
-                        Rice
-                    </td>
                     <td class="px-6 py-4 flex space-x-4">
-                        <!-- Modal toggle -->
                         <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal"
+                        <a href="#" type="button"
                             class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
                     </td>
                 </tr>
@@ -77,7 +68,7 @@
                     <!-- Modal header -->
                     <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
                         <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                            Edit expense Details
+                            Edit Category Details
                         </h3>
                         <button type="button"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
