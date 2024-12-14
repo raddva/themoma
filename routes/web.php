@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'pages.dashboard')->name('home');
+Route::view('/signin', 'auth.login-auth')->name('signin');
+Route::view('/signup', 'auth.register')->name('signup');
+Route::view('/alt', 'layout.alt')->name('alt');
 Route::view('/login', 'pages.login')->name('login');
 Route::view('/expenses', 'pages.expenses')->name('expenses');
 Route::view('/incomes', 'pages.incomes')->name('incomes');
